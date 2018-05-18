@@ -10,39 +10,42 @@ window.onload = function() {
 document.getElementById('btnPlay').addEventListener('click', function(){
     var wantToPlay = document.getElementById('s/n').value;
     if (wantToPlay.toLowerCase() == "s") {
+       document.getElementById('click1').addEventListener('click', function(){
+        var answer1 = document.getElementById('respuesta1').value;
+        if (answer1.toLowerCase() == "n") {
+            document.getElementById("rightAnswersText").innerHTML =
+                document.getElementById("rightAnswersText").innerHTML +
+                "<div class='answer'>" +
+                "<p>No han egresado hombres</p>"
+            "</div>";
+        } else {
+            document.getElementById("wrongAnswersText").innerHTML =
+                document.getElementById("wrongAnswersText").innerHTML +
+                "<div class='answer'>" +
+                "<p>No han egresado hombres</p>"
+            "</div>";
+        }
+       })
+      document.getElementById('click2').addEventListener('click', function(){
+        var answer2 = document.getElementById('respuesta2').value;
+        if (answer2.toLowerCase() == "n") {
+            document.getElementById("rightAnswersText").innerHTML =
+                document.getElementById("rightAnswersText").innerHTML +
+                "<div class='answer'>" +
+                "<p>No hay laboratoria en concepción</p>"
+            "</div>";
+        } else {
+            document.getElementById("wrongAnswersText").innerHTML =
+                document.getElementById("wrongAnswersText").innerHTML +
+                "<div class='answer'>" +
+                "<p>No hay laboratoria en concepción</p>"
+            "</div>";
+        }
+      })
        
-       var answer1 = prompt("¿han egresado hombres en Laboratoria? s/n");
-       if (answer1.toLowerCase() == "n") {
-           document.getElementById("rightAnswersText").innerHTML =
-               document.getElementById("rightAnswersText").innerHTML +
-               "<div class='answer'>" +
-               "<p>No han egresado hombres</p>"
-           "</div>";
-       } else {
-           document.getElementById("wrongAnswersText").innerHTML =
-               document.getElementById("wrongAnswersText").innerHTML +
-               "<div class='answer'>" +
-               "<p>No han egresado hombres</p>"
-           "</div>";
-       }
-       var answer2 = prompt("¿hay laboratoria en concepción? s/n");
-       if (answer2.toLowerCase() == "n") {
-           document.getElementById("rightAnswersText").innerHTML =
-               document.getElementById("rightAnswersText").innerHTML +
-               "<div class='answer'>" +
-               "<p>No hay laboratoria en concepción</p>"
-           "</div>";
-       } else {
-           document.getElementById("wrongAnswersText").innerHTML =
-               document.getElementById("wrongAnswersText").innerHTML +
-               "<div class='answer'>" +
-               "<p>No hay laboratoria en concepción</p>"
-           "</div>";
-       }
    } else {
        document.getElementById("warningMessage").innerText = "Bueno Chao";
    }
 })
      
  }
->>>>>>> 4f1045ee3df60d47fab93400091cb729cfe00ac9
